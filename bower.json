@@ -1,0 +1,24 @@
+{
+  "name": "mysite",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Nick Zelei <nickzelei@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
