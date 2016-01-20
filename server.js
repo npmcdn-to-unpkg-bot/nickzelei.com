@@ -4,11 +4,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-var db = require('./config/db');
-
 var port = process.env.PORT || 8082;
 
-mongoose.connect(db.url);
+mongoose.connect(process.env.DB_URL);
 
 app.use(bodyParser.json());
 

@@ -17,9 +17,8 @@ coverage
 #bower libs
 public/libs
 
-#mongo configuration
-config/db.js
-config/emailerconfig.js
+#foreman
+.env
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt

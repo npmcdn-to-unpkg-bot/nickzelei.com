@@ -1,7 +1,11 @@
 'use strict';
 
 var nodemailer = require('nodemailer');
-var emailConfig = require('../../config/emailerconfig');
+var emailConfig = {
+	'service': process.env.EMAIL_SERVICE,
+	'username': process.env.EMAIL_USERNAME,
+	'passwordToken': process.env.PASSWORDTOKEN
+};
 
 module.exports = {
 	sendMail: function(data, callback) {
