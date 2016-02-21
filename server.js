@@ -6,7 +6,9 @@ var methodOverride = require('method-override');
 
 var port = process.env.PORT || 8082;
 
-//mongoose.connect(process.env.DB_URL); //the url was throwing an exception when I moved it into the .env file need to look into why
+//mongoose.connect(process.env.DB_URL, function(err) {
+	//if (err) throw err;
+//}); //the url was throwing an exception when I moved it into the .env file need to look into why
 
 app.use(bodyParser.json());
 
