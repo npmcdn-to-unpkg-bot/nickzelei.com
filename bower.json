@@ -9,17 +9,18 @@
   "moduleType": [
     "node"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/zelein/nickzelei",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "public/libs"
   ],
   "dependencies": {
-    "angular": "~1.4.8",
+    "angular": "^1.5.0",
     "angular-animate": "^1.5.0"
   }
 }
