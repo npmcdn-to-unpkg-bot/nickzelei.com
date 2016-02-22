@@ -2,16 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nick Zelei - Web Dev</title>
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
     <link rel="stylesheet" href="../css/style.css">
-
-
-
 </head>
-<body>
+<body ng-app="MySiteApp">
     <div class="intro teal lighten-2 z-depth-1">
         <h1 class="grey-text text-lighten-5">nick zelei</h1>
         <h5 clas="grey lighten-4 grey-text text-darken-1">web developer</h5>
@@ -22,15 +20,14 @@
         <div class="row">
             <div class="col s12 m4 l4">
                 <h6>Story</h6>
-                <p>Hello and welcome to my front facing site. My name is Nick and I am what I like to consider a Full Stack Web Dev. I've been in the professional industry for a few years now, and I immensly enjoy what I do. I like solving problems and writing code. Professionally, I mostly work in the .NET stack, but in my free time I like to dabble with Node.<br/>Take a look around, if you like what you see, feel free to send me a message below. Do we share the same interests? I'd love to talk with you about them.</p>
-
+                <p>Hello and welcome to my front facing site. My name is Nick and I am what I like to consider a Full Stack Web Dev. I've been in the professional industry for a few years now, and I immensly enjoy what I do. I like solving problems and writing code. Professionally, I mostly work in the .NET stack, but in my free time I like to dabble with Node, and am currently learning Ruby.<br />Take a look around, if you like what you see, feel free to send me a message below. Do we share the same interests? Contact me and let's chat.</p>
             </div>
             <div class="col s12 m4 l4">
                 <h6>Profile</h6>
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <img class="avatar" src="https://www.gravatar.com/avatar/a11a8f9ff33d8c3da906b1621b6365b0" width="64" height="64">
-                        <p>I am currently interested in NodeJS, AngularJS, C#, and MVC. In the real world, I enjoy bicycling, dirtbike trail riding, guitar, and the outdoors.</p>
+                        <p>I am currently interested in NodeJS, AngularJS, C#, Ruby, and MVC. In the real world, I enjoy bicycling, dirtbike trail riding, guitar, and the outdoors.</p>
                     </div>
                     <div class="card-action">
                         <a href="https://www.linkedin.com/in/nick-zelei-8661b65a" target="_blank">LinkedIn</a>
@@ -47,11 +44,11 @@
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Marathon Petroleum Company</div>
-                        <div class="collapsible-body"><p>I was an intern at MPC for 5 months during the Fall Semester of 2012. I worked in a small offshoot department of IT that worked directly with Chemical Engineers in office, as well as at the various refineries. <br/><br/>I learned a lot about Office Interop and working with Excel automation to be specific. This ranged from coding in VBScript (for macros and in-app programs), to writing applications in C# that further manipulated the sheets. I learned a lot about C# at Marathon. I was also introduced into the world of SSIS packages, and the power that they hold.</p></div>
+                        <div class="collapsible-body"><p>I was an intern at MPC for 5 months during the Fall Semester of 2012. I worked in a small offshoot department of IT that worked directly with Chemical Engineers in office, as well as at the various refineries. <br /><br />I learned a lot about Office Interop and working with Excel automation to be specific. This ranged from coding in VBScript (for macros and in-app programs), to writing applications in C# that further manipulated the sheets. I learned a lot about C# at Marathon. I was also introduced into the world of SSIS packages, and the power that they hold.</p></div>
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="mdi-av-play-shopping-bag"></i>The University of Findlay</div>
-                        <div class="collapsible-body"><p>My Alma Mater, I held quite a few student jobs while I was here. A few even related to my major. I started off as a Service Technician at the locally, student run 3C Computer Repairs. I fixed hardware and software issues on student/teacher computers. I quickly moved up and was Assistant Manager.<br/><br/>The last student job I held I moved paper forms to Google Forms. These were powered by Sheets and the Apps Script Engine. There was a multitude of logic that powered these forms. At the base, they emailed the form owner of a submission. Some of them would even compile the submission data and fill out a template word doc that would be attached to the email. This was very will liked by the University Admins and was a huge QOL improvement over the old way of doing things.</p></div>
+                        <div class="collapsible-body"><p>My Alma Mater, I held quite a few student jobs while I was here. A few even related to my major. I started off as a Service Technician at the locally, student run 3C Computer Repairs. I fixed hardware and software issues on student/teacher computers. I quickly moved up and was Assistant Manager.<br /><br />The last student job I held I moved paper forms to Google Forms. These were powered by Sheets and the Apps Script Engine. There was a multitude of logic that powered these forms. At the base, they emailed the form owner of a submission. Some of them would even compile the submission data and fill out a template word doc that would be attached to the email. This was very will liked by the University Admins and was a huge QOL improvement over the old way of doing things.</p></div>
                     </li>
                 </ul>
             </div>
@@ -68,36 +65,37 @@
             </div>
         </div>
     </div>
-    <div class="container contact">
+    <div class="container contact" ng-controller="ContactController as ctvm">
         <h5>contact me</h5>
         <hr>
         <div class="row">
             <div class="col s12 m12">
                 <div class="row">
-                    <div class="container"
-              <form class="col s12 m12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">E-Mail</label>
-                  </div>
-                </div>
-                <textarea class="materialize-textarea" placeholder="Your Message" required></textarea>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                  <i class="mdi-content-send right"></i>
-                </button>
-              </form>
-			</div>
+                    <div class="container">
+                        <form name="contactMe" id="contactMe" class="col s12 m12" ng-submit="ctvm.send(contactMe.$valid)" novalidate>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="first_name" name="fname" type="text" class="validate" required ng-model="ctvm.contact.fname"  ng-class="{ 'invalid' : contactMe.fname.$invalid && !contactMe.fname.$pristine }">
+                                    <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="last_name" name="lname" type="text" class="validate" required ng-model="ctvm.contact.lname"  ng-class="{ 'invalid' : contactMe.lname.$invalid && !contactMe.lname.$pristine }">
+                                    <label for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" name="email" class="validate" required ng-model="ctvm.contact.email"  ng-class="{ 'invalid' : contactMe.email.$invalid && !contactMe.email.$pristine }">
+                                    <label for="email">E-Mail</label>
+                                </div>
+                            </div>
+                            <textarea class="materialize-textarea" name="message" placeholder="Your Message" required ng-model="ctvm.contact.message" ng-class="{ 'invalid' : contactMe.message.$invalid && !contactMe.message.$pristine }"></textarea>
+                            <button ng-disabled="contactMe.$invalid" class="btn waves-effect waves-light" type="submit" name="action">
+                                Submit
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,5 +109,10 @@
     </footer>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/controllers.js"></script>
 </body>
 </html>

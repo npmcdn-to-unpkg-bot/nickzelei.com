@@ -10,18 +10,17 @@ module.exports = function(app) {
 
   app.post('/api/contactus', function(req, res) {
       var data = req.body || false;
-      data.lvblnk = data.lvblnk || false;
-      if (data && !data.lvblnk) {
+      console.log(data);
+      if (data) {
         Emailer.sendMail(data, function(error, greatSuccess) {
           if (error) {
-            //console.log(error);
+            console.log(error);
           }
           res.json({ success: greatSuccess });
         });
       }
       else {
-        //let spammers think it was a success
-        res.json({ success: true });
+        res.json({ success: false });
       }
   });
   

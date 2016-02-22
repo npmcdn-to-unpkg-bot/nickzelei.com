@@ -29,7 +29,8 @@ module.exports = {
 			subject: subject,
 			html: text
 		};
-
+        if (callback)
+            callback(null, true);
 		transporter.sendMail(message, function(error, info) {
 			if (error) {
 				console.log('Error occurred');
