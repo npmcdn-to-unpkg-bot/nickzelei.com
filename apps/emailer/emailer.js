@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 var emailConfig = {
 	'service': process.env.EMAIL_SERVICE,
 	'username': process.env.EMAIL_USERNAME,
-	'passwordToken': process.env.PASSWORDTOKEN
+	'passwordToken': process.env.EMAIL_PASSWORDTOKEN
 };
 
 module.exports = {
@@ -19,7 +19,7 @@ module.exports = {
 	    }
 		});
 		console.log(process.env.EMAIL_USERNAME);
-        console.log(process.env.PASSWORDTOKEN);
+        console.log(process.env.EMAIL_PASSWORDTOKEN);
 		var subject = "New Inquiry from: " + data.name;
 		var text = "Name: " + data.name + "<br><br>" +
 					"Phone: " + data.phone + "<br><br>" + 
