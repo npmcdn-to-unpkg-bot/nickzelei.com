@@ -10,7 +10,7 @@ var emailConfig = {
 module.exports = {
 	sendMail: function(data, callback) {
 		var transporter = nodemailer.createTransport({
-			service: emailConfig.service,
+			host: "smtp.gmail.com",
             port: 465,
             secure: true,
 			auth: {
