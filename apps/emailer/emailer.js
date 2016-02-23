@@ -3,11 +3,10 @@
 var nodemailer = require('nodemailer');
 var emailConfig = {
 	'service': process.env.EMAIL_SERVICE,
-	'username': 'nickzelei@gmail.com',// process.env.EMAIL_USERNAME,
-	'passwordToken': 'mlpefvhifpktksms'// process.env.EMAIL_PASSWORDTOKEN
+	'username': process.env.EMAIL_USERNAME,
+	'passwordToken': process.env.EMAIL_PASSWORDTOKEN
 };
-console.log("Process", process);
-console.log("env", process.env);
+
 module.exports = {
 	sendMail: function(data, callback) {
 		var transporter = nodemailer.createTransport({
@@ -19,8 +18,7 @@ module.exports = {
 		        pass: emailConfig.passwordToken
 	    }
 		});
-		console.log(process.env.EMAIL_USERNAME);
-        console.log(process.env.EMAIL_PASSWORDTOKEN);
+
 		var subject = "New Inquiry from: " + data.name;
 		var text = "Name: " + data.name + "<br><br>" +
 					"Phone: " + data.phone + "<br><br>" + 
