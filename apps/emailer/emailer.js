@@ -11,6 +11,8 @@ module.exports = {
 	sendMail: function(data, callback) {
 		var transporter = nodemailer.createTransport({
 			service: emailConfig.service,
+            port: 465,
+            secure: true,
 			auth: {
 		        user: emailConfig.username,
 		        pass: emailConfig.passwordToken
