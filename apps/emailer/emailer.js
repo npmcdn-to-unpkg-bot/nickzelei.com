@@ -21,10 +21,9 @@ module.exports = {
 		});
 
 		let subject = "New Inquiry from: " + data.name;
-		let text = "Name: " + data.name + "<br><br>" +
-					"Phone: " + data.phone + "<br><br>" + 
-					"Email: " + data.email + "<br><br>" + 
-					"Message: " + data.message;
+		let text =    "Name: " + data.name + "<br><br>" +
+					  "Email: " + data.email + "<br><br>" + 
+					  "Message: " + data.message;
 
 		const message = {
 			from: emailConfig.username,

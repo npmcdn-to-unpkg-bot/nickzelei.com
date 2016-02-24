@@ -16,7 +16,7 @@ const port = process.env.PORT || 8082;
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.json({ type:'application/vnd.api+json'}))
+app.use(bodyParser.json({ type:'application/vnd.api+json'}));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
