@@ -1,6 +1,8 @@
-var path = require('path');
-var Emailer = require('./emailer/emailer');
-var mongoose = require('mongoose');
+/* global __dirname */
+'use strict';
+const path = require('path');
+const Emailer = require('./emailer/emailer');
+const mongoose = require('mongoose');
 
 
 module.exports = function(app) {
@@ -9,7 +11,7 @@ module.exports = function(app) {
   });
 
   app.post('/api/contactus', function(req, res) {
-      var data = req.body || false;
+      let data = req.body || false;
       console.log(data);
       if (data) {
         Emailer.sendMail(data, function(error, greatSuccess) {

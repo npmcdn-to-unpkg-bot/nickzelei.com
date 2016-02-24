@@ -1,14 +1,18 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+/* global process */
+/* global __dirname */
+'use strict';
 
-var port = process.env.PORT || 8082;
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+
+const port = process.env.PORT || 8082;
 
 //mongoose.connect(process.env.DB_URL, function(err) {
 	//if (err) throw err;
-//}); //the url was throwing an exception when I moved it into the .env file need to look into why
+//});
 
 app.use(bodyParser.json());
 
@@ -20,7 +24,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.use(express.static(__dirname + '/public'));
 
-var router = express.Router();
+const router = express.Router();
 
 require('./apps/routes')(app);
 

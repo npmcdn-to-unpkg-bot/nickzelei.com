@@ -1,7 +1,8 @@
+/* global process */
 'use strict';
 
-var nodemailer = require('nodemailer');
-var emailConfig = {
+const nodemailer = require('nodemailer');
+const emailConfig = {
 	'service': process.env.EMAIL_SERVICE,
 	'username': process.env.EMAIL_USERNAME,
 	'passwordToken': process.env.EMAIL_PASSWORDTOKEN
@@ -9,7 +10,7 @@ var emailConfig = {
 
 module.exports = {
 	sendMail: function(data, callback) {
-		var transporter = nodemailer.createTransport({
+		const transporter = nodemailer.createTransport({
 			host: "smtp.gmail.com",
             port: 465,
             secure: true,
@@ -19,13 +20,13 @@ module.exports = {
 	    }
 		});
 
-		var subject = "New Inquiry from: " + data.name;
-		var text = "Name: " + data.name + "<br><br>" +
+		let subject = "New Inquiry from: " + data.name;
+		let text = "Name: " + data.name + "<br><br>" +
 					"Phone: " + data.phone + "<br><br>" + 
 					"Email: " + data.email + "<br><br>" + 
 					"Message: " + data.message;
 
-		var message = {
+		const message = {
 			from: emailConfig.username,
 			to: emailConfig.username,
 			subject: subject,
