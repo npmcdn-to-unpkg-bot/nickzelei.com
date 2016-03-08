@@ -29,7 +29,8 @@ module.exports = {
 			from: emailConfig.username,
 			to: emailConfig.username,
 			subject: subject,
-			html: text
+			html: text,
+			replyTo: data.email
 		};
 
 		transporter.sendMail(message, function(error, info) {
