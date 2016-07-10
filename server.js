@@ -4,15 +4,10 @@
 
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 const port = process.env.PORT || 8082;
-
-//mongoose.connect(process.env.DB_URL, function(err) {
-	//if (err) throw err;
-//});
 
 app.use(bodyParser.json());
 
@@ -32,4 +27,4 @@ app.listen(port);
 
 console.log('Magic happens on port ' + port);
 
-exports = module.exports = app; 	 	
+exports = module.exports = app;

@@ -6,9 +6,9 @@
     <meta property="og:title" content="Nick Zelei - Web Dev" />
     <meta property="og:description" content="Welcome to my front facing site." />
     <meta property="og:url" content="http://nickzelei.com" />
-    <meta property="og:image" content="https://s3.amazonaws.com/zelei/ogsiteimg.png" />    
-    
-    <title>Nick Zelei - Web Dev</title>
+    <meta property="og:image" content="https://s3.amazonaws.com/zelei/ogsiteimg.png" />
+
+    <title>Nick Zelei - Software Engineer</title>
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
     <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
@@ -17,7 +17,7 @@
 <body ng-app="MySiteApp">
     <div class="intro teal lighten-2 z-depth-1">
         <h1 class="grey-text text-lighten-5">nick zelei</h1>
-        <h5 clas="grey lighten-4 grey-text text-darken-1">web app developer</h5>
+        <h5 clas="grey lighten-4 grey-text text-darken-1">software engineer</h5>
     </div>
     <div class="container about">
         <h5>about me</h5>
@@ -25,18 +25,19 @@
         <div class="row">
             <div class="col s12 m4 l4">
                 <h6>Story</h6>
-                <p>Hello and welcome to my front facing site. My name is Nick and I consider myself a Full Stack Web Dev. I have been in the professional industry for a few years now and I immensely enjoy what I do. I like solving problems and writing code. Professionally I mostly work in the .NET stack, but in my free time I like to dabble with Node and I am currently learning Ruby. Take a look around, if you like what you see feel free to send me a message below. Do we share the same interests? Contact me and let's chat.</p>
+                <p>Hello and welcome, I'm Nick and I am a Software Engineer. I currently work on the back-end as a NodeJS dev with TypeScript. I have been in the professional industry for a few years now and I immensely enjoy what I do. I really like challenging problems and writing code to solve those problems.<br/> Take a look around, if you like what you see feel free to send me a message below. <br/>Do we share the same interests? Contact me and let's chat.</p>
             </div>
             <div class="col s12 m4 l4">
                 <h6>Profile</h6>
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <img class="avatar" src="https://www.gravatar.com/avatar/a11a8f9ff33d8c3da906b1621b6365b0" width="64" height="64">
-                        <p>I am currently interested in NodeJS, AngularJS, C#, Ruby, and MVC. In the real world, I enjoy bicycling, dirtbike trail riding, guitar, and the outdoors.</p>
+                        <p>I am currently interested in NodeJS, AngularJS, TypeScript, and React. In the real world, I enjoy bicycling, dirtbike trail riding, guitar, and the outdoors.</p>
                     </div>
                     <div class="card-action">
                         <a href="https://www.linkedin.com/in/nick-zelei-8661b65a" target="_blank">LinkedIn</a>
                         <a href='https://twitter.com/nickzelei' target="_blank">Twitter</a>
+                        <a href='https://github.com/zelein' target="_blank">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -44,8 +45,17 @@
                 <h6>current and past jobs</h6>
                 <ul class="collapsible">
                     <li class="active">
+                        <div class="collapsible-header"><i class="mdi-av-web"></i>Garmin</div>
+                        <div class="collapsible-body"><p>I currently work here as a Software Engineer as a NodeJS Developer. I create and implement micro-services and internal tools to assist other Engineers to increase workflow and process.</p></div>
+                    </li>
+                    <li>
                         <div class="collapsible-header"><i class="mdi-av-web"></i>BlueBolt</div>
-                        <div class="collapsible-body"><p>I currently work at BlueBolt where I work as a Web Developer and currently work in the ASP.NET stack. I've learned an immense amount while working here and have grown from a back-end developer exclusively to more of a Full Stack Dev. Feel free to contact me if you wish to inquire more about what I do.</p></div>
+                        <div class="collapsible-body">
+                          <p>I worked here as a .NET Web Developer. I learned alot while working there and have grown from a back-end developer exclusively to more of a Full Stack Dev.
+                          <br/>
+                          I worked on many different client websites mostly in the DotNetNuke (DNN) CMS. I also worked extensively on building E-Commerce applications from the front-end to the back.
+                          </p>
+                        </div>
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Marathon Petroleum Company</div>
@@ -97,7 +107,7 @@
                             <textarea class="materialize-textarea" name="message" placeholder="Your Message" required ng-model="ctvm.contact.message" ng-class="{ 'invalid' : contactMe.message.$invalid && !contactMe.message.$pristine }"></textarea>
                             <button ng-disabled="contactMe.$invalid" class="btn waves-effect waves-light" type="submit" name="action">
                                 Submit
-                                <i class="mdi-content-send right"></i> 
+                                <i class="mdi-content-send right"></i>
                             </button>
                         </form>
                     </div>

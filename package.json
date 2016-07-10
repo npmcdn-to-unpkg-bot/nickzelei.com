@@ -6,9 +6,8 @@
   "dependencies": {
     "body-parser": "*",
     "express": "*",
-    "foreman": "1.4.1",
+    "foreman": "^1.4.1",
     "method-override": "*",
-    "mongoose": "*",
     "nodemailer": "*"
   },
   "scripts": {
@@ -16,8 +15,8 @@
     "start": "nf start"
   },
   "engines": {
-    "node": "*"
+    "node": "=6.*"
   },
-  "author": "",
+  "author": "Nick Zelei",
   "license": "ISC"
 }
