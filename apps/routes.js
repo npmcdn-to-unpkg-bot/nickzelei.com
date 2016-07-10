@@ -2,8 +2,6 @@
 'use strict';
 const path = require('path');
 const Emailer = require('./emailer/emailer');
-const mongoose = require('mongoose');
-
 
 module.exports = function(app) {
   app.get('/api', function(req, res) {
@@ -11,7 +9,7 @@ module.exports = function(app) {
   });
 
   app.post('/api/contactus', function(req, res) {
-      let data = req.body || false;
+      const data = req.body || false;
       console.log(data);
       if (data) {
         Emailer.sendMail(data, function(error, greatSuccess) {
@@ -25,7 +23,7 @@ module.exports = function(app) {
         res.json({ success: false });
       }
   });
-  
+
   //catch all to handle angular routes
   app.get('*', function(req, res) {
     res.sendFile('index.html', { root: path.join(__dirname, '../public/views/') });

@@ -2,53 +2,53 @@
 'use strict';
 
 const nodemailer = require('nodemailer');
+
 const emailConfig = {
-	'service': process.env.EMAIL_SERVICE,
-	'username': process.env.EMAIL_USERNAME,
-	'passwordToken': process.env.EMAIL_PASSWORDTOKEN
+    'username': process.env.EMAIL_USERNAME,
+    'passwordToken': process.env.EMAIL_PASSWORDTOKEN,
+    'sendTo': process.env.EMAIL_SENDTO
 };
 
 module.exports = {
-	sendMail: function(data, callback) {
-		const transporter = nodemailer.createTransport({
-			host: "smtp.gmail.com",
+    sendMail: function(data, callback) {
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
             port: 465,
             secure: true,
-			auth: {
-		        user: emailConfig.username,
-		        pass: emailConfig.passwordToken
-	    }
-		});
+            auth: {
+                user: emailConfig.username,
+                pass: emailConfig.passwordToken
+            }
+          });
 
-		let subject = "New Inquiry from: " + data.name;
-		let text =    "Name: " + data.name + "<br><br>" +
-					  "Email: " + data.email + "<br><br>" + 
-					  "Message: " + data.message;
+        const subject = "New Inquiry from: " + data.name;
+        const text = "Name: " + data.name + "<br><br>" +
+            "Email: " + data.email + "<br><br>" +
+            "Message: " + data.message;
 
-		const message = {
-			from: emailConfig.username,
-			to: emailConfig.username,
-			subject: subject,
-			html: text,
-			replyTo: data.email
-		};
+        const message = {
+            from: emailConfig.username,
+            to: emailConfig.sendTo,
+            subject: subject,
+            html: text,
+            replyTo: data.email
+        };
 
-		transporter.sendMail(message, function(error, info) {
-			if (error) {
-				console.log('Error occurred');
-				console.log(error);
-				console.log(error.message);
-				if (callback)
-					callback(error.message, false);
-				return;
-			}
+        transporter.sendMail(message, function(error, info) {
+          if (error) {
+            console.log('Error occurred');
+            console.log(error);
+            console.log(error.message);
+            if (callback)
+            callback(error.message, false);
+            return;
+          }
 
-			console.log('Message success!');
-			console.log(info);
-			console.log('Server responded with "%s"', info.response);
+          console.log('Message success!');
+          console.log(info);
+          console.log('Server responded with "%s"', info.response);
 
-			if (callback)
-				callback(null, true);
-		});
-	}
+          if (callback) callback(null, true);
+        });
+      }
 };
